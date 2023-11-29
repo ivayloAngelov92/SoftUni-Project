@@ -57,7 +57,11 @@ h2 { margin-top: 0; }
     padding: 10px;
 }
 
-.tm-container { padding: 30px; }
+.tm-container { 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+ }
 
 .tm-row {
     display: flex;
@@ -191,7 +195,9 @@ h2 { margin-top: 0; }
 }
 
 .tm-list-item-price { color: #96FEFF; }
-.tm-site-footer { margin-top: 15px; }
+.tm-site-footer {
+    
+     margin-top: 15px; }
 
 .tm-footer-text {
     padding: 10px 65px 10px 20px;
@@ -292,7 +298,7 @@ h2 { margin-top: 0; }
 
 .tm-mb-30 { margin-bottom: 30px; }
 
-@media (max-width: 1130px) {
+@media (max-width: 1130px) and (min-width: 992px) {
     .tm-left-inner { max-width: 380px; }
     .tm-site-name { font-size: 2.6rem; }
     .tm-site-logo { margin-right: 20px; }
