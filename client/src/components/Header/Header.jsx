@@ -7,21 +7,35 @@ export default function Header() {
     <div className="tm-left">
       <div className="tm-left-inner">
         <div className="tm-site-header">
+        <Link to="/" className="tm-page-link">
           <i className="fas fa-coffee fa-3x tm-site-logo" />
           <h1 className="tm-site-name">Wave Cafe</h1>
+          </Link>
         </div>
         <nav className="tm-site-nav">
           <ul className="tm-site-nav-ul">
             <li className="tm-page-nav-item">
               <Link to="/" className="tm-page-link active">
-                <i className="fas fa-mug-hot tm-page-link-icon" />
+              <i className="fa-solid fa-mug-hot tm-page-link-icon" />
                 <span>Drink Menu</span>
               </Link>
             </li>
             <li className="tm-page-nav-item">
-              <Link to="/create" className="tm-page-link active">
-                <i className="fas fa-mug-hot tm-page-link-icon" />
+              <Link to="/create" className="tm-page-link">
+              <i className="fas fa-glass-cheers tm-page-link-icon" />
                 <span>Create your own</span>
+              </Link>
+            </li>
+            <li className="tm-page-nav-item">
+              <Link to="/create" className="tm-page-link">
+              <i className="fas fa-universal-access tm-page-link-icon" />
+                <span>My Profile</span>
+              </Link>
+            </li>
+            <li className="tm-page-nav-item">
+              <Link to="/logout" className="tm-page-link">
+              <i className="fa fa-sign-out tm-page-link-icon" />
+                <span>Logout</span>
               </Link>
             </li>
             <li className="tm-page-nav-item">

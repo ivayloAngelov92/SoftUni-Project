@@ -1,7 +1,30 @@
-export default function Juice(){
-    return (
-
-        <div id="juice" className="tm-tab-content">
+import { Link } from 'react-router-dom';
+export default function Juice() {
+  return (
+    <>
+      <div id="drink" className="tm-page-content">
+        {/* Drink Menu Page */}
+        <nav className="tm-black-bg tm-drinks-nav">
+          <ul>
+            <li>
+              <Link to="/" className="tm-tab-link" data-id="cold">
+                Iced Coffee
+              </Link>
+            </li>
+            <li>
+              <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
+                Hot Coffee
+              </Link>
+            </li>
+            <li>
+              <Link to="/drinks/juice" className="tm-tab-link active" data-id="juice">
+                Fruit Juice
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="juice" className="tm-tab-content">
         <div className="tm-list">
           <div className="tm-list-item">
             <img
@@ -15,8 +38,8 @@ export default function Juice(){
                 <span className="tm-list-item-price">$12.50</span>
               </h3>
               <p className="tm-list-item-description">
-                Here is a short description for the item along with a
-                squared thumbnail.
+                Here is a short description for the item along with a squared
+                thumbnail.
               </p>
             </div>
           </div>
@@ -32,8 +55,8 @@ export default function Juice(){
                 <span className="tm-list-item-price">$14.50</span>
               </h3>
               <p className="tm-list-item-description">
-                Here is a list of 4 items or add more. You can use this
-                template for commercial purposes.
+                Here is a list of 4 items or add more. You can use this template
+                for commercial purposes.
               </p>
             </div>
           </div>
@@ -49,8 +72,8 @@ export default function Juice(){
                 <span className="tm-list-item-price">$16.50</span>
               </h3>
               <p className="tm-list-item-description">
-                Left side logo and main menu are fixed. The video background
-                is fixed.
+                Left side logo and main menu are fixed. The video background is
+                fixed.
               </p>
             </div>
           </div>
@@ -73,6 +96,6 @@ export default function Juice(){
           </div>
         </div>
       </div>
-      
-    )
+    </>
+  );
 }

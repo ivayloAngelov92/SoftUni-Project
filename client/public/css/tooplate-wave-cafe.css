@@ -103,17 +103,18 @@ h2 { margin-top: 0; }
     justify-content: space-between;
 }
 
-.tm-page-nav-item { margin-top: 20px; }
+.tm-page-nav-item {margin-top: 20px; }
 
 .tm-page-link {
     min-width: 240px;
-    height: 100px;
+    height: 60px;
     background-color: white;
     color: #099;
     display: flex;
     text-decoration: none;
     align-items: center;      
     font-size: 1.2rem;
+    border-radius: 10px;
 }
 
 .tm-page-link:hover,

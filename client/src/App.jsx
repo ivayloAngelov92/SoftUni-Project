@@ -4,7 +4,6 @@ import Footer from './components/Footer/Footer';
 import Catalog from './components/Catalog/Catalog';
 import Hot from './components/Catalog/Hot';
 import Juice from './components/Catalog/Juice';
-import CatalogNav from './components/Catalog/CatalogNav';
 
 
 
@@ -15,7 +14,6 @@ function App() {
         <Header/>
         <div className="tm-right">
         <main className="tm-main">
-        <CatalogNav/>
         <Routes>
           <Route path='/' element= { <Catalog/>}/>
           <Route path='/drinks/hot' element= { <Hot/>}/>

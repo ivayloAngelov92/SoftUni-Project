@@ -1,6 +1,29 @@
+import { Link} from 'react-router-dom'
 export default function Catalog() {
-  return (      
-        <div id="cold" className="tm-tab-content">
+  return ( 
+    <>
+    <div id="drink" className="tm-page-content">
+    <nav className="tm-black-bg tm-drinks-nav">
+      <ul>
+        <li>
+          <Link to="/" className="tm-tab-link" data-id="cold">
+            Iced Coffee
+          </Link>
+        </li>
+        <li>
+          <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
+            Hot Coffee
+          </Link>
+        </li>
+        <li>
+          <Link to="/drinks/juice" className="tm-tab-link" data-id="juice">
+            Fruit Juice
+          </Link>
+        </li>
+      </ul>
+    </nav>
+    </div>     
+      <div id="cold" className="tm-tab-content">
             <div className="tm-list">
               <div className="tm-list-item">
                 <img
@@ -77,6 +100,8 @@ export default function Catalog() {
                 </div>
               </div>
             </div>
-          </div>
+        </div>
+    </>
+    
   );
 }

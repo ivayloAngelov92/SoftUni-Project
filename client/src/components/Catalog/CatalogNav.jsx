@@ -1,3 +1,5 @@
+import { Link} from 'react-router-dom'
+
 export default function CatalogNav(){
     return (
         <div id="drink" className="tm-page-content">
@@ -5,19 +7,19 @@ export default function CatalogNav(){
           <nav className="tm-black-bg tm-drinks-nav">
             <ul>
               <li>
-                <a href="/" className="tm-tab-link" data-id="cold">
+                <Link to="/" className="tm-tab-link" data-id="cold">
                   Iced Coffee
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/drinks/hot" className="tm-tab-link" data-id="hot">
+                <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
                   Hot Coffee
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/drinks/juice" className="tm-tab-link" data-id="juice">
+                <Link to="/drinks/juice" className="tm-tab-link" data-id="juice">
                   Fruit Juice
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
