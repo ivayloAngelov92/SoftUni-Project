@@ -292,7 +292,7 @@ h2 { margin-top: 0; }
 
 .tm-mb-30 { margin-bottom: 30px; }
 
-@media (max-width: 1130px) and (min-width: 992px) {
+@media (max-width: 1130px) {
     .tm-left-inner { max-width: 380px; }
     .tm-site-name { font-size: 2.6rem; }
     .tm-site-logo { margin-right: 20px; }
