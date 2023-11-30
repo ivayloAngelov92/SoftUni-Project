@@ -1,9 +1,11 @@
 import './Create.module.css';
+import { create } from '../../services/drinkServices';
 export default function Create() {
-  const createDrinkHandler = (e) => {
+  const createDrinkHandler = async(e) => {
     e.preventDefault();
     const drinksData=Object.fromEntries(new FormData(e.currentTarget))
-    console.log(drinksData);
+    const result= await create(drinksData)
+    console.log(result);
   };
 
   return (
@@ -18,7 +20,17 @@ export default function Create() {
           required="true"
           placeholder="Name your drink"
         />
-        <label htmlFor="imgUrl">Drink Name:</label>
+        <label htmlFor="drinkName">Price:</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          min={0}
+          step="any"
+          required="true"
+          placeholder="Price"
+        />
+        <label htmlFor="imgUrl">Image Url:</label>
         <input
           type="text"
           id="imgUrl"
