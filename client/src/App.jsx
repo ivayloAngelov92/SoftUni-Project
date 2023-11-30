@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import Catalog from './components/Catalog/Catalog';
 import Hot from './components/Catalog/Hot';
 import Juice from './components/Catalog/Juice';
-
+import Login from './components/Login/Login';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path='/' element= { <Catalog/>}/>
           <Route path='/drinks/hot' element= { <Hot/>}/>
           <Route path='/drinks/juice' element= { <Juice/>}/>
+          <Route path='/login' element= { <Login/>}/>
 
         </Routes>
         </main>

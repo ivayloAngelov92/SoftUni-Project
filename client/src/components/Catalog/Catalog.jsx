@@ -6,7 +6,7 @@ export default function Catalog() {
     <nav className="tm-black-bg tm-drinks-nav">
       <ul>
         <li>
-          <Link to="/" className="tm-tab-link" data-id="cold">
+          <Link to="/" className="tm-tab-link active" data-id="cold">
             Iced Coffee
           </Link>
         </li>

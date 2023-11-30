@@ -12,7 +12,7 @@ export default function Hot() {
               </Link>
             </li>
             <li>
-              <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
+              <Link to="/drinks/hot" className="tm-tab-link active" data-id="hot">
                 Hot Coffee
               </Link>
             </li>
