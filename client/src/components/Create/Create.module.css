@@ -1,14 +1,4 @@
-/* #create-page{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    overflow-x: hidden;
-    background-color: #1E5050;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-} */
+
 form {
     background-color: #fff;
     padding: 30px;

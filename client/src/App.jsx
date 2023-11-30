@@ -6,6 +6,7 @@ import Hot from './components/Catalog/Hot';
 import Juice from './components/Catalog/Juice';
 import Login from './components/Login/Login';
 import Create from './components/Create/Create';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/drinks/hot' element= { <Hot/>}/>
           <Route path='/drinks/juice' element= { <Juice/>}/>
           <Route path='/login' element= { <Login/>}/>
+          <Route path='/register' element= { <Register/>}/>
           <Route path='/create' element= { <Create/>}/>
 
         </Routes>

@@ -1,4 +1,4 @@
-import './Create.min.css'
+import './Create.module.css'
 export default function Create() {
   return (
     <section id="create-page" className="auth">
