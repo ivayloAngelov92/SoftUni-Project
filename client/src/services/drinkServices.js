@@ -8,6 +8,6 @@ export const create= async(drinkData)=>{
         },
         body: JSON.stringify(drinkData)
     })
-    const result= (await response).json()
+    const result= await response.json()
     return result
 }

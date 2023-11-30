@@ -1,0 +1,22 @@
+{
+  "b72f78b5-0592-40ce-bcdf-407747adbb7e": {
+    "drinkName": "Iced Americano",
+    "price": "2.50",
+    "imgUrl": "https://neurosciencenews.com/files/2023/06/coffee-brain-caffeine-neuroscincces.jpg",
+    "type": "iced",
+    "baseSpirit": "vodka",
+    "ingredients": "wqdqdqw",
+    "instructions": "dwqdqw",
+    "_id": "b72f78b5-0592-40ce-bcdf-407747adbb7e"
+},
+"b72f78b5-0592-40ce-bcdf-5h32oi2532": {
+  "drinkName": "hot Americano",
+  "price": "3.50",
+  "imgUrl": "https://images.pexels.com/photos/1194030/pexels-photo-1194030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "type": "hot",
+  "baseSpirit": "rum",
+  "ingredients": "cxzcxz",
+  "instructions": "cxzcxz",
+  "_id": "b72f78b5-0592-40ce-bcdf-5h32oi2532"
+}
+}

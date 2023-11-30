@@ -1,17 +1,17 @@
 import { Link} from 'react-router-dom'
-export default function Catalog() {
+export default function Iced() {
   return ( 
     <>
     <div id="drink" className="tm-page-content">
     <nav className="tm-black-bg tm-drinks-nav">
       <ul>
         <li>
-          <Link to="/" className="tm-tab-link active" data-id="all">
+          <Link to="/" className="tm-tab-link " data-id="all">
             All drinks
           </Link>
         </li>
         <li>
-          <Link to="/drinks/iced" className="tm-tab-link" data-id="cold">
+          <Link to="/drinks/iced" className="tm-tab-link active" data-id="cold">
             Iced
           </Link>
         </li>

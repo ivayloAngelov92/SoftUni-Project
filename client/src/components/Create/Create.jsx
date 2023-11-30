@@ -1,11 +1,26 @@
 import './Create.module.css';
+import { useNavigate } from 'react-router-dom'
 import { create } from '../../services/drinkServices';
 export default function Create() {
+  const navigate = useNavigate()
   const createDrinkHandler = async(e) => {
     e.preventDefault();
+
     const drinksData=Object.fromEntries(new FormData(e.currentTarget))
-    const result= await create(drinksData)
-    console.log(result);
+    try{
+      await create(drinksData)
+      if(drinksData.type === 'iced'){
+        navigate('/drinks/iced')
+      }else if(drinksData.type === 'hot') {
+        navigate('/drinks/hot')
+      }else if(drinksData.type === 'juice') {
+        navigate('/drinks/juice')
+      }
+    }catch(err){
+      console.log(err);
+    }
+    console.log(drinksData.type);
+    console.log(drinksData);
   };
 
   return (
@@ -38,13 +53,21 @@ export default function Create() {
           required="true"
           placeholder="Enter image URL"
         />
+        <label htmlFor="baseSpirit">Type:</label>
+        <select id="type" name="type" required="true">
+          <option value="iced">iced</option>
+          <option value="hot">hot</option>
+          <option value="juice">juice</option>
+
+          {/* Add more options as needed */}
+        </select>
         <label htmlFor="baseSpirit">Base Spirit:</label>
         <select id="baseSpirit" name="baseSpirit" required="false">
           <option value="none"></option>
           <option value="vodka">Vodka</option>
           <option value="rum">Rum</option>
           <option value="gin">Gin</option>
-          <option value="gin">Whisky</option>
+          <option value="whisky">Whisky</option>
 
           {/* Add more options as needed */}
         </select>
