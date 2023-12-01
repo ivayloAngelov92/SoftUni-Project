@@ -8,7 +8,7 @@ import Login from './components/Login/Login';
 import Create from './components/Create/Create';
 import Register from './components/Register/Register';
 import Iced from './components/Catalog/Iced';
-
+import Details from './components/Details/Details';
 function App() {
   return (
     <div className="tm-container">
@@ -24,6 +24,7 @@ function App() {
           <Route path='/login' element= { <Login/>}/>
           <Route path='/register' element= { <Register/>}/>
           <Route path='/create' element= { <Create/>}/>
+          <Route path='/drinks/:id' element= { <Details/>}/>
 
         </Routes>
         </main>

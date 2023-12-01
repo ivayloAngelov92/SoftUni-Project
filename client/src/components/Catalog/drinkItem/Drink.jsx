@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
+
 export default function Drink({
+    _id,
     imgUrl,
     drinkName,
     price,
-    description
+    description,
 }){
     return(
         <div id="cold" className="tm-list-item">
@@ -19,6 +22,7 @@ export default function Drink({
                   <p className="tm-list-item-description">
                     {description}
                   </p>
+                    <span><Link to={`drinks/${_id}`} className="">Details</Link></span>
                 </div>
               </div>
     )
