@@ -1,5 +1,16 @@
+import { useEffect, useState } from 'react';
+import * as drinkService from '../../services/drinkServices'
+
 import { Link} from 'react-router-dom'
 export default function Catalog() {
+  const [drinks, setDrinks]= useState([])
+
+  useEffect(()=>{
+     drinkService.getAll()
+     .then(result=> setDrinks(result))
+  },[])
+
+  console.log(drinks);
   return ( 
     <>
     <div id="drink" className="tm-page-content">
