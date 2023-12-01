@@ -15,6 +15,8 @@ export default function Create() {
         navigate('/drinks/hot')
       }else if(drinksData.type === 'juice') {
         navigate('/drinks/juice')
+      }else{
+        navigate('/')
       }
     }catch(err){
       console.log(err);
@@ -32,17 +34,17 @@ export default function Create() {
           type="text"
           id="drinkName"
           name="drinkName"
-          required="true"
+          required={true}
           placeholder="Name your drink"
         />
-        <label htmlFor="drinkName">Price:</label>
+        <label htmlFor="price">Price:</label>
         <input
           type="number"
           id="price"
           name="price"
           min={0}
           step="any"
-          required="true"
+          required={true}
           placeholder="Price"
         />
         <label htmlFor="imgUrl">Image Url:</label>
@@ -50,24 +52,14 @@ export default function Create() {
           type="text"
           id="imgUrl"
           name="imgUrl"
-          required="true"
+          required={true}
           placeholder="Enter image URL"
         />
-        <label htmlFor="baseSpirit">Type:</label>
-        <select id="type" name="type" required="true">
+        <label htmlFor="type">Type:</label>
+        <select id="type" name="type" required={true}>
           <option value="iced">iced</option>
           <option value="hot">hot</option>
           <option value="juice">juice</option>
-
-          {/* Add more options as needed */}
-        </select>
-        <label htmlFor="baseSpirit">Base Spirit:</label>
-        <select id="baseSpirit" name="baseSpirit" required="false">
-          <option value="none"></option>
-          <option value="vodka">Vodka</option>
-          <option value="rum">Rum</option>
-          <option value="gin">Gin</option>
-          <option value="whisky">Whisky</option>
 
           {/* Add more options as needed */}
         </select>
@@ -76,7 +68,7 @@ export default function Create() {
           id="ingredients"
           name="ingredients"
           rows={4}
-          required=""
+          required={true}
           defaultValue={''}
           placeholder="All Ingredient necessary for this recipe."
         />
@@ -85,9 +77,18 @@ export default function Create() {
           id="instructions"
           name="instructions"
           rows={4}
-          required=""
+          required={true}
           defaultValue={''}
           placeholder="Some clarification"
+        />
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows={4}
+          required={true}
+          defaultValue={''}
+          placeholder="Description"
         />
         <button className="btn" type="submit">
           Create Drink

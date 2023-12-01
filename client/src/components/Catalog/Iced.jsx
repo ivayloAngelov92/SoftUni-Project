@@ -28,7 +28,7 @@ export default function Iced() {
       </ul>
     </nav>
     </div>     
-      <div id="cold" className="tm-tab-content">
+      <div className="tm-tab-content">
             <div className="tm-list">
               <div className="tm-list-item">
                 <img
