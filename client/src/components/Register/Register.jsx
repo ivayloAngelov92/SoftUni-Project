@@ -3,17 +3,16 @@ export default function Register() {
     <form>
       <h2>Register</h2>
       <label htmlFor="username">Username:</label>
-      <input type="text" id="username" name="username" required="true" />
+      <input type="text" id="username" name="username"/>
       <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Please enter valid Email" required="true" />
+      <input type="email" id="email" name="email" placeholder="Please enter valid Email"/>
       <label htmlFor="password">Password:</label>
-      <input type="password" id="password" name="password"  required="true" />
+      <input type="password" id="password" name="password"/>
       <label htmlFor="confirmPassword">Confirm Password:</label>
       <input
         type="password"
         id="confirmPassword"
         name="confirmPassword"
-        required="true"
       />
       <button type="submit">Register</button>
     </form>

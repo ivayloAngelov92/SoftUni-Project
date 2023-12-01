@@ -8,7 +8,7 @@ export default function Drink({
     description,
 }){
     return(
-        <div id="cold" className="tm-list-item">
+        <div className="tm-list-item">
                 <img
                   src={imgUrl}
                   alt="Image"
@@ -22,7 +22,7 @@ export default function Drink({
                   <p className="tm-list-item-description">
                     {description}
                   </p>
-                    <span><Link to={`drinks/${_id}`} className="">Details</Link></span>
+                  <Link to={`/drinks/${_id}`} className="details-button">Details</Link>
                 </div>
               </div>
     )

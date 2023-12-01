@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as drinkService from '../../services/drinkServices'
+import * as drinkService from '../../services/drinkService'
 
 import { Link} from 'react-router-dom'
 import Drink from './drinkItem/Drink';

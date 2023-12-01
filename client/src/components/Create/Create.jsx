@@ -1,6 +1,6 @@
 import './Create.module.css';
 import { useNavigate } from 'react-router-dom'
-import { create } from '../../services/drinkServices';
+import { create } from '../../services/drinkService';
 export default function Create() {
   const navigate = useNavigate()
   const createDrinkHandler = async(e) => {
@@ -34,7 +34,6 @@ export default function Create() {
           type="text"
           id="drinkName"
           name="drinkName"
-          required={true}
           placeholder="Name your drink"
         />
         <label htmlFor="price">Price:</label>
@@ -44,7 +43,6 @@ export default function Create() {
           name="price"
           min={0}
           step="any"
-          required={true}
           placeholder="Price"
         />
         <label htmlFor="imgUrl">Image Url:</label>
@@ -52,7 +50,6 @@ export default function Create() {
           type="text"
           id="imgUrl"
           name="imgUrl"
-          required={true}
           placeholder="Enter image URL"
         />
         <label htmlFor="type">Type:</label>
@@ -68,7 +65,6 @@ export default function Create() {
           id="ingredients"
           name="ingredients"
           rows={4}
-          required={true}
           defaultValue={''}
           placeholder="All Ingredient necessary for this recipe."
         />
@@ -77,7 +73,6 @@ export default function Create() {
           id="instructions"
           name="instructions"
           rows={4}
-          required={true}
           defaultValue={''}
           placeholder="Some clarification"
         />
@@ -86,7 +81,6 @@ export default function Create() {
           id="description"
           name="description"
           rows={4}
-          required={true}
           defaultValue={''}
           placeholder="Description"
         />
