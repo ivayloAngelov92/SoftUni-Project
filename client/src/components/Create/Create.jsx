@@ -21,8 +21,6 @@ export default function Create() {
     }catch(err){
       console.log(err);
     }
-    console.log(drinksData.type);
-    console.log(drinksData);
   };
 
   return (
@@ -57,7 +55,6 @@ export default function Create() {
           <option value="iced">iced</option>
           <option value="hot">hot</option>
           <option value="juice">juice</option>
-
           {/* Add more options as needed */}
         </select>
         <label htmlFor="ingredients">Ingredients:</label>
@@ -65,7 +62,6 @@ export default function Create() {
           id="ingredients"
           name="ingredients"
           rows={4}
-          defaultValue={''}
           placeholder="All Ingredient necessary for this recipe."
         />
         <label htmlFor="instructions">Instructions:</label>
@@ -73,7 +69,6 @@ export default function Create() {
           id="instructions"
           name="instructions"
           rows={4}
-          defaultValue={''}
           placeholder="Some clarification"
         />
         <label htmlFor="description">Description:</label>
@@ -81,12 +76,11 @@ export default function Create() {
           id="description"
           name="description"
           rows={4}
-          defaultValue={''}
           placeholder="Description"
         />
-        <button className="btn" type="submit">
-          Create Drink
-        </button>
+        <input className="tm-page-link" type="submit" value="Create Drink"/>
+          
+        
       </form>
     </section>
   );

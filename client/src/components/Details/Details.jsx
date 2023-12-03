@@ -30,9 +30,9 @@ export default function Details() {
   return (
     <>
       
-      <h1>Custom Drink Details</h1>
+      <h1 className='heading'>Custom Drink Details</h1>
       
-      <section>
+      <section className='details'>
         <img src={drink.imgUrl} />
       </section>
       <section className="tm-container">

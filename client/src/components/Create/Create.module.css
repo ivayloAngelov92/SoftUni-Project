@@ -24,16 +24,3 @@ input, select, textarea {
     border-radius: 4px;
 }
 
-button {
-    background-color: #099;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #066;
-}

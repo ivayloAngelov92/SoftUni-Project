@@ -14,7 +14,7 @@ export default function Register() {
         id="confirmPassword"
         name="confirmPassword"
       />
-      <button type="submit">Register</button>
+      <input style={{paddingLeft: "120px"}} className="tm-page-link" type="submit" value="Register"/>
     </form>
   );
 }

@@ -111,7 +111,7 @@ h2 { margin-top: 0; }
     color: #099;
     display: flex;
     text-decoration: none;
-    align-items: center;      
+    align-items: center;   
     font-size: 1.2rem;
     border-radius: 10px;
 }
@@ -120,6 +120,7 @@ h2 { margin-top: 0; }
 .tm-page-link.active {
     background-color: #099;
     color: white;
+    cursor: pointer;
 }
 
 .tm-page-link-icon {
@@ -220,6 +221,7 @@ h2 { margin-top: 0; }
     margin-left: 30px; 
     margin-right: 0;
 }
+
 
 /* Go from zero to full opacity */
 @keyframes fadeEffect {
