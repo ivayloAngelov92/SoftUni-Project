@@ -12,7 +12,7 @@ export default function Login({ loginSubmitHandler }) {
   return (
     <form id="login-page" className="auth" onSubmit={onSubmit}>
       <h2>Login</h2>
-      <label htmlFor="username">Email:</label>
+      <label htmlFor="email">Email:</label>
       <input
         type="text"
         id="email"
