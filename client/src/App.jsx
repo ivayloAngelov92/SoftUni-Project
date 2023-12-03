@@ -10,12 +10,15 @@ import Register from './components/Register/Register';
 import Iced from './components/Catalog/Iced';
 import Details from './components/Details/Details';
 import { useState } from 'react';
+import AuthContext from './contexts/authContext';
+
 function App() {
   const [auth, setAuth] = useState({});
   const loginSubmitHandler = (values) => {
     console.log(values);
   };
   return (
+    <AuthContext.Provider value={{loginSubmitHandler}}>
     <div className="tm-container">
       <div className="tm-row">
         <Header />
@@ -39,6 +42,7 @@ function App() {
       </div>
       <Footer></Footer>
     </div>
+    </AuthContext.Provider>
   );
 }
 
