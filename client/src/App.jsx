@@ -29,7 +29,11 @@ function App() {
     console.log(result);
   };
   const registerSubmitHandler = async (values) => {
-    console.log(values);
+    
+    const result= await register(values.username, values.email, values.password)
+    console.log(result);
+    setAuth(result)
+    navigate(Path.Catalog)
   }
 
   const values={
