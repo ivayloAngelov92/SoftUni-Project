@@ -28,9 +28,13 @@ function App() {
     navigate(Path.Catalog)
     console.log(result);
   };
+  const registerSubmitHandler = async (values) => {
+    console.log(values);
+  }
 
   const values={
     loginSubmitHandler,
+    registerSubmitHandler,
     username:auth.username,
     email:auth.email,
     isAuthenticated: !!auth.username
