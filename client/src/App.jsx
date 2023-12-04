@@ -28,8 +28,15 @@ function App() {
     navigate(Path.Catalog)
     console.log(result);
   };
+
+  const values={
+    loginSubmitHandler,
+    username:auth.username,
+    email:auth.email,
+    isAuthenticated: !!auth.username
+    }
   return (
-    <AuthContext.Provider value={{loginSubmitHandler}}>
+    <AuthContext.Provider value={values}>
     <div className="tm-container">
       <div className="tm-row">
         <Header />

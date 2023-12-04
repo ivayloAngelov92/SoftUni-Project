@@ -1,6 +1,13 @@
+import { useContext } from 'react';
 import { Link} from 'react-router-dom'
+import AuthContext from '../../contexts/authContext';
 
 export default function Header() {
+  const {
+    isAuthenticated,
+    username
+  }= useContext(AuthContext)
+
   return (
     <div className="tm-container">
       <div className="tm-row">
@@ -21,24 +28,6 @@ export default function Header() {
               </Link>
             </li>
             <li className="tm-page-nav-item">
-              <Link to="/create" className="tm-page-link">
-              <i className="fas fa-glass-cheers tm-page-link-icon" />
-                <span>Create your own</span>
-              </Link>
-            </li>
-            <li className="tm-page-nav-item">
-              <Link to="/create" className="tm-page-link">
-              <i className="fas fa-universal-access tm-page-link-icon" />
-                <span>My Profile</span>
-              </Link>
-            </li>
-            <li className="tm-page-nav-item">
-              <Link to="/logout" className="tm-page-link">
-              <i className="fa fa-sign-out tm-page-link-icon" />
-                <span>Logout</span>
-              </Link>
-            </li>
-            <li className="tm-page-nav-item">
               <Link to="/about" className="tm-page-link">
                 <i className="fas fa-users tm-page-link-icon" />
                 <span>About Us</span>
@@ -56,7 +45,32 @@ export default function Header() {
                 <span>Contact</span>
               </Link>
             </li>
+            {isAuthenticated &&(
+              <>
+              <li className="tm-page-nav-item">
+              <Link to="/create" className="tm-page-link">
+              <i className="fas fa-glass-cheers tm-page-link-icon" />
+                <span>Create your own</span>
+              </Link>
+            </li>
             <li className="tm-page-nav-item">
+              <Link to="/logout" className="tm-page-link">
+              <i className="fa fa-sign-out tm-page-link-icon" />
+                <span>Logout</span>
+              </Link>
+            </li>
+            <li className="tm-page-nav-item">
+              <Link to="/create" className="tm-page-link">
+              <i className="fas fa-universal-access tm-page-link-icon" />
+                <span>Welcome {username}</span>
+              </Link>
+            </li>
+            </>
+            
+            )}
+            {!isAuthenticated && (
+              <>
+              <li className="tm-page-nav-item">
               <Link to="/login" className="tm-page-link">
                 <i className="fas fa-file-invoice tm-page-link-icon" />
                 <span>Login</span>
@@ -68,6 +82,9 @@ export default function Header() {
                 <span>Register</span>
               </Link>
             </li>
+            </>
+            )}
+            
           </ul>
         </nav>
       </div>
