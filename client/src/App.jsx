@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import { login, register, logout } from './services/authService';
+import { login, register } from './services/authService';
 import AuthContext from './contexts/authContext';
 
 
@@ -21,6 +21,7 @@ function App() {
   const navigate= useNavigate()
   const [auth, setAuth] = useState(()=>{
     localStorage.removeItem('accessToken');
+    return{}
   });
 
   const loginSubmitHandler =async (values) => {
