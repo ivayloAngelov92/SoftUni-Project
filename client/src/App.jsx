@@ -41,7 +41,7 @@ function App() {
     registerSubmitHandler,
     username:auth.username,
     email:auth.email,
-    isAuthenticated: !!auth.username
+    isAuthenticated: !!auth.accessToken
     }
   return (
     <AuthContext.Provider value={values}>
