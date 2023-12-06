@@ -9,9 +9,8 @@ export default function Catalog() {
   useEffect(()=>{
      drinkService.getAll()
      .then(result=> setDrinks(result))
+     .catch(err=> console.error(err))
   },[])
-
-  console.log(drinks);
   return ( 
     <>
     <div id="drink" className="tm-page-content">

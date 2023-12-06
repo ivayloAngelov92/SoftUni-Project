@@ -1,32 +1,42 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as drinkService from '../../services/drinkService';
 import * as commentService from '../../services/commentService';
 import AuthContext from '../../contexts/authContext';
+import useForm from '../../hooks/useForm';
+// import reducer from './commentReducer';
 
 export default function Details() {
-  const { email } = useContext(AuthContext);
+  const { email, userId } = useContext(AuthContext);
   const [drink, setDrink] = useState({});
   const [comments, setComments] = useState([]);
+  // const [comments, dispatch]= useReducer(reducer, [])
   const { drinkId } = useParams();
+
   useEffect(() => {
     drinkService.getOne(drinkId).then(setDrink);
 
     commentService.getAll(drinkId).then(setComments);
+    // .then((result)=>{
+    //   dispatch({
+    //     type: 'GET_ALL_COMMENTS',
+    //     payload: result
+    //   });
+    // });
   }, [drinkId]);
 
-  const addCommentHandler = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-
-    const newComment = await commentService.create(
-      drinkId,
-      formData.get('comment')
-    );
-
-    setComments(state => [...state, { ...newComment, author:  {email}  }]);
+  const addCommentHandler = async (values) => {
+    const newComment = await commentService.create(drinkId, values.comment);
+    // newComment.owner={email}
+    // dispatch({
+    //   type: "ADD_COMMENT",
+    //   payload: newComment
+    // })
+    setComments((state) => [...state, { ...newComment, owner: { email } }]);
   };
+  const { values, onChange, onSubmit } = useForm(addCommentHandler, {
+    comment: '',
+  });
 
   return (
     <>
@@ -54,6 +64,16 @@ export default function Details() {
           <strong>Description:</strong> {drink.description}
         </p>
       </section>
+      {userId === drink._ownerId && (
+        <div className="buttons">
+          <a href="#" className="button">
+            Edit
+          </a>
+          <a href="#" className="button">
+            Delete
+          </a>
+        </div>
+      )}
       <div className="details-comments">
         <h2>Comments:</h2>
         <ul>
@@ -69,16 +89,17 @@ export default function Details() {
         {comments.length === 0 && <p className="no-comment">No comments.</p>}
       </div>
 
-      {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
-                <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div> */}
+      
 
       <article className="create-comment">
         <label>Add new comment:</label>
-        <form className="form" onSubmit={addCommentHandler}>
-          <textarea name="comment" placeholder="Comment......"></textarea>
+        <form className="form" onSubmit={onSubmit}>
+          <textarea
+            name="comment"
+            value={values.comment}
+            onChange={onChange}
+            placeholder="Comment......"
+          ></textarea>
           <input className="btn submit" type="submit" value="Add Comment" />
         </form>
       </article>
