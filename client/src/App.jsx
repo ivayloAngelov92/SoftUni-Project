@@ -1,8 +1,5 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
-import { login, register } from './services/authService';
-import AuthContext from './contexts/authContext';
+import { Routes, Route } from 'react-router-dom';
+import {AuthProvider} from './contexts/authContext';
 
 
 import Header from './components/Header/Header';
@@ -18,43 +15,8 @@ import Iced from './components/Catalog/Iced';
 import Details from './components/Details/Details';
 
 function App() {
-  const navigate= useNavigate()
-  const [auth, setAuth] = useState(()=>{
-    localStorage.removeItem('accessToken');
-    return{}
-  });
-
-  const loginSubmitHandler =async (values) => {
-    const result= await login(values.email, values.password)
-    setAuth(result)
-    localStorage.setItem('accessToken', result.accessToken)
-    navigate('/')
-  };
-
-  const registerSubmitHandler = async (values) => {
-    
-    const result= await register(values.username, values.email, values.password)
-    setAuth(result)
-    localStorage.setItem('accessToken', result.accessToken)
-    navigate('/')
-  }
-  const logoutHandler = ()=>{
-    setAuth({})
-    localStorage.removeItem('accessToken')
-    navigate('/')
-  }
-
-  const values={
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username:auth.username,
-    email:auth.email,
-    isAuthenticated: !!auth.accessToken,
-    
-    }
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
     <div className="tm-container">
       <div className="tm-row">
         <Header />
@@ -76,7 +38,7 @@ function App() {
       </div>
       <Footer></Footer>
     </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
