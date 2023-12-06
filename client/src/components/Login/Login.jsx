@@ -2,15 +2,11 @@ import { useContext } from 'react';
 import useForm from '../../hooks/useForm';
 import AuthContext from '../../contexts/authContext';
 
-const loginFromKeys = {
-  email: 'email',
-  password: 'password',
-};
 export default function Login() {
   const { loginSubmitHandler } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
-    [loginFromKeys.email]: '',
-    [loginFromKeys.password]: '',
+    email: '',
+    password: '',
   });
   return (
     <form id="login-page" className="auth" onSubmit={onSubmit}>
@@ -19,18 +15,18 @@ export default function Login() {
       <input
         type="text"
         id="email"
-        name={loginFromKeys.email}
+        name="email"
         placeholder="example@domain.com"
         onChange={onChange}
-        value={values[loginFromKeys.email]}
+        value={values.email}
       />
       <label htmlFor="password">Password:</label>
       <input
         type="password"
         id="password"
-        name={loginFromKeys.password}
+        name="password"
         onChange={onChange}
-        value={values[loginFromKeys.password]}
+        value={values.password}
       />
       <input
         style={{ paddingLeft: '120px' }}
@@ -38,6 +34,11 @@ export default function Login() {
         type="submit"
         value="Login"
       />
+      <p className="field">
+        <span>
+          If you don't have profile click <a href="#">here</a>
+        </span>
+      </p>
     </form>
   );
 }

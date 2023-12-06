@@ -13,6 +13,7 @@ import Register from './components/Register/Register';
 import Create from './components/Create/Create';
 import Iced from './components/Catalog/Iced';
 import Details from './components/Details/Details';
+import Edit from './components/Edit/Edit';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/logout" element={<Logout />} />
               <Route path="/create" element={<Create />} />
               <Route path="/drinks/:drinkId" element={<Details />} />
+              <Route path="/drinks/:drinkId/edit" element={<Edit />} />
             </Routes>
           </main>
         </div>

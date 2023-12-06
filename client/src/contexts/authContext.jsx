@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import * as authService from '../services/authService';
 import usePersistedState from '../hooks/usePersistedState';
-import Path from '../paths';
+
 
 const AuthContext = createContext();
 
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem('accessToken', result.accessToken);
 
-    navigate(Path.Catalog);
+    navigate('/');
   };
 
   const registerSubmitHandler = async (values) => {
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem('accessToken', result.accessToken);
 
-    navigate(Path.Catalog);
+    navigate('/');
   };
 
   const logoutHandler = () => {

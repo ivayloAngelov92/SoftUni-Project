@@ -1,5 +1,5 @@
-import { useContext, useEffect, useReducer, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import * as drinkService from '../../services/drinkService';
 import * as commentService from '../../services/commentService';
 import AuthContext from '../../contexts/authContext';
@@ -34,10 +34,12 @@ export default function Details() {
     // })
     setComments((state) => [...state, { ...newComment, owner: { email } }]);
   };
-  const { values, onChange, onSubmit } = useForm(addCommentHandler, {
-    comment: '',
-  });
 
+  const initialValues= useMemo(()=> ({
+      comment: '',
+    }), [])
+  const { values, onChange, onSubmit } = useForm(addCommentHandler,initialValues );
+ 
   return (
     <>
       <h1 className="heading">Custom Drink Details</h1>
@@ -66,12 +68,12 @@ export default function Details() {
       </section>
       {userId === drink._ownerId && (
         <div className="buttons">
-          <a href="#" className="button">
+          <Link to={`/drinks/${drinkId}/edit`} className="button">
             Edit
-          </a>
-          <a href="#" className="button">
+          </Link>
+          <Link to={`/drinks/${drinkId}/delete`} className="button">
             Delete
-          </a>
+          </Link>
         </div>
       )}
       <div className="details-comments">

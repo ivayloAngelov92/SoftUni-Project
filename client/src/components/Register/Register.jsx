@@ -2,20 +2,13 @@ import { useContext } from 'react';
 import AuthContext from '../../contexts/authContext';
 import useForm from '../../hooks/useForm';
 
-const registerFromKeys = {
-  username: 'username',
-  email: 'email',
-  password: 'password',
-  confirmPassword: 'confirmPassword',
-};
-
 export default function Register() {
   const { registerSubmitHandler } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-    [registerFromKeys.username]: '',
-    [registerFromKeys.email]: '',
-    [registerFromKeys.password]: '',
-    [registerFromKeys.confirmPassword]: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
 
   return (
@@ -27,7 +20,7 @@ export default function Register() {
         id="username"
         name="username"
         onChange={onChange}
-        value={values[registerFromKeys.username]}
+        value={values.username}
       />
       <label htmlFor="email">Email:</label>
       <input
@@ -36,23 +29,23 @@ export default function Register() {
         name="email"
         placeholder="Please enter valid Email"
         onChange={onChange}
-        value={values[registerFromKeys.email]}
+        value={values.email}
       />
       <label htmlFor="password">Password:</label>
       <input
         type="password"
         id="password"
-        name='password'
+        name="password"
         onChange={onChange}
-        value={values[registerFromKeys.password]}
+        value={values.password}
       />
       <label htmlFor="confirmPassword">Confirm Password:</label>
       <input
         type="password"
         id="confirmPassword"
         onChange={onChange}
-        name='confirmPassword'
-        value={values[registerFromKeys.confirmPassword]}
+        name="confirmPassword"
+        value={values.confirmPassword}
       />
       <input
         style={{ paddingLeft: '120px' }}
@@ -60,6 +53,11 @@ export default function Register() {
         type="submit"
         value="Register"
       />
+      <p className="field">
+        <span>
+          If you already have profile click <a href="#">here</a>
+        </span>
+      </p>
     </form>
   );
 }

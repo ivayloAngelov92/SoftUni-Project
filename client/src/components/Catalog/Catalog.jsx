@@ -9,7 +9,7 @@ export default function Catalog() {
   useEffect(()=>{
      drinkService.getAll()
      .then(result=> setDrinks(result))
-     .catch(err=> console.error(err))
+     .catch(err=> console.log(err))
   },[])
   return ( 
     <>
