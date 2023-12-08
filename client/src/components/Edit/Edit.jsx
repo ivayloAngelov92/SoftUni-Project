@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { edit, getOne } from '../../services/drinkService';
-import useForm from '../../hooks/useForm';
 import { useEffect, useState } from 'react';
 
 export default function Edit() {

@@ -14,9 +14,11 @@ import Create from './components/Create/Create';
 import Iced from './components/Catalog/Iced';
 import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
+    <ErrorBoundary>
     <AuthProvider>
     <div className="tm-container">
       <div className="tm-row">
@@ -41,6 +43,7 @@ function App() {
       <Footer></Footer>
     </div>
     </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
