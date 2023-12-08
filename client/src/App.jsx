@@ -16,6 +16,7 @@ import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/Guards/AuthGuard';
+import Latest from './components/Catalog/Latest';
 
 function App() {
   return (
@@ -27,15 +28,15 @@ function App() {
         <div className="tm-right">
           <main className="tm-main">
             <Routes>
-              <Route path="/" element={<Catalog />} />
+              <Route path="/" element={<Latest />} />
+              <Route path="/drinks" element={<Catalog />} />
               <Route path="/drinks/iced" element={<Iced />} />
               <Route path="/drinks/hot" element={<Hot />} />
               <Route path="/drinks/juice" element={<Juice />} />
               <Route path="/login"element={<Login />}/>
               <Route path="/register" element={<Register />} />
-              
               <Route path="/drinks/:drinkId" element={<Details />} />
-              
+
               <Route element={<AuthGuard/>}>
               <Route path="/create" element={<Create />} />
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />
@@ -53,3 +54,7 @@ function App() {
 }
 
 export default App;
+
+
+
+// navigate(-1) returns 1 page back

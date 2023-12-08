@@ -21,6 +21,7 @@ export default function Edit() {
       setDrink(result);
     });
   }, [drinkId]);
+  
   const editDrinkHandler = async (e) => {
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.currentTarget));

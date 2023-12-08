@@ -3,11 +3,11 @@ import * as drinkService from '../../services/drinkService'
 
 import { Link} from 'react-router-dom'
 import Drink from './drinkItem/Drink';
-export default function Catalog() {
+export default function Latest() {
   const [drinks, setDrinks]= useState([])
 
   useEffect(()=>{
-     drinkService.getAll()
+     drinkService.getLatest()
      .then(result=> setDrinks(result))
      .catch(err=> console.log(err))
   },[])
@@ -15,14 +15,14 @@ export default function Catalog() {
     <>
     <div id="drink" className="tm-page-content">
     <nav className="tm-black-bg tm-drinks-nav">
-    <ul>
+      <ul>
         <li>
-          <Link to="/" className="tm-tab-link" data-id="all">
+          <Link to="/" className="tm-tab-link active" data-id="all">
             Our Latest Additions
           </Link>
         </li>
         <li>
-          <Link to="/drinks" className="tm-tab-link active" data-id="all">
+          <Link to="/drinks" className="tm-tab-link" data-id="all">
             All drinks
           </Link>
         </li>
@@ -49,7 +49,7 @@ export default function Catalog() {
               {drinks.map(drink=>(
                 <Drink key={drink._id} {...drink} />
               ))}
-              {drinks.length===0 && <h3 className="no-drinks">No Drinks</h3>}
+              {!drinks.length && <h3 className="no-drinks">No Drinks</h3>}
             </div>
         </div>
     </>

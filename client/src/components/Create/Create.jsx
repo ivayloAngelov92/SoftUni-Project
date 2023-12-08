@@ -8,16 +8,8 @@ export default function Create() {
 
     const drinksData=Object.fromEntries(new FormData(e.currentTarget))
     try{
-      await create(drinksData)
-      if(drinksData.type === 'iced'){
-        navigate('/drinks/iced')
-      }else if(drinksData.type === 'hot') {
-        navigate('/drinks/hot')
-      }else if(drinksData.type === 'juice') {
-        navigate('/drinks/juice')
-      }else{
-        navigate('/')
-      }
+      const response= await create(drinksData)
+      navigate(`/drinks/${response._id}`)
     }catch(err){
       console.log(err);
     }

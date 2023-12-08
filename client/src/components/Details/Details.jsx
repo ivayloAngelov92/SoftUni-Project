@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useReducer, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import * as drinkService from '../../services/drinkService';
 import * as commentService from '../../services/commentService';
 import AuthContext from '../../contexts/authContext';
@@ -7,12 +7,12 @@ import useForm from '../../hooks/useForm';
 // import reducer from './commentReducer';
 
 export default function Details() {
+  const navigate  = useNavigate();
   const { email, userId } = useContext(AuthContext);
   const [drink, setDrink] = useState({});
   const [comments, setComments] = useState([]);
   // const [comments, dispatch]= useReducer(reducer, [])
   const { drinkId } = useParams();
-
   useEffect(() => {
     drinkService.getOne(drinkId).then(setDrink);
 
@@ -35,11 +35,21 @@ export default function Details() {
     setComments((state) => [...state, { ...newComment, owner: { email } }]);
   };
 
-  const initialValues= useMemo(()=> ({
-      comment: '',
-    }), [])
-  const { values, onChange, onSubmit } = useForm(addCommentHandler,initialValues );
- 
+  const deleteButtonClickHandler = async () => {
+    const hasConfirmed = confirm(
+      `Are you sure you want to delete ${drink.drinkName}`
+    );
+    if (hasConfirmed) {
+      await drinkService.remove(drinkId);
+      navigate('/');
+    }
+  };
+
+  const { values, onChange, onSubmit } = useForm(
+    addCommentHandler,
+    {comment: ''}
+  );
+
   return (
     <>
       <h1 className="heading">Custom Drink Details</h1>
@@ -68,12 +78,12 @@ export default function Details() {
       </section>
       {userId === drink._ownerId && (
         <div className="buttons">
-          <Link to={`/drinks/${drinkId}/edit`} className="button">
+          <Link to={`/drinks/${drinkId}/edit`} className="tm-page-link">
             Edit
           </Link>
-          <Link to={`/drinks/${drinkId}/delete`} className="button">
+          <button className="tm-page-link"  onClick={deleteButtonClickHandler}>
             Delete
-          </Link>
+          </button>
         </div>
       )}
       <div className="details-comments">
@@ -90,8 +100,6 @@ export default function Details() {
 
         {comments.length === 0 && <p className="no-comment">No comments.</p>}
       </div>
-
-      
 
       <article className="create-comment">
         <label>Add new comment:</label>
