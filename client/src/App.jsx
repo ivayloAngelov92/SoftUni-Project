@@ -15,6 +15,7 @@ import Iced from './components/Catalog/Iced';
 import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import ErrorBoundary from './components/ErrorBoundary';
+import AuthGuard from './components/Guards/AuthGuard';
 
 function App() {
   return (
@@ -32,10 +33,14 @@ function App() {
               <Route path="/drinks/juice" element={<Juice />} />
               <Route path="/login"element={<Login />}/>
               <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route path="/create" element={<Create />} />
+              
               <Route path="/drinks/:drinkId" element={<Details />} />
+              
+              <Route element={<AuthGuard/>}>
+              <Route path="/create" element={<Create />} />
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />
+              <Route path="/logout" element={<Logout />} />
+              </Route>
             </Routes>
           </main>
         </div>
