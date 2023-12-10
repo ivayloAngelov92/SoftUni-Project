@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import {AuthProvider} from './contexts/authContext';
-
+import { lazy, Suspense } from 'react';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -12,12 +12,12 @@ import Logout from './components/Logout/Logout';
 import Register from './components/Register/Register';
 import Create from './components/Create/Create';
 import Iced from './components/Catalog/Iced';
-import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/Guards/AuthGuard';
 import Latest from './components/Catalog/Latest';
-
+// import Details from './components/Details/Details';
+const Details= lazy(()=> import('./components/Details/Details'))
 function App() {
   return (
     <ErrorBoundary>
@@ -27,6 +27,7 @@ function App() {
         <Header />
         <div className="tm-right">
           <main className="tm-main">
+          
             <Routes>
               <Route path="/" element={<Latest />} />
               <Route path="/drinks" element={<Catalog />} />
@@ -35,14 +36,16 @@ function App() {
               <Route path="/drinks/juice" element={<Juice />} />
               <Route path="/login"element={<Login />}/>
               <Route path="/register" element={<Register />} />
+              <Suspense fallback={<h1>Insert spinner component...</h1>}>
               <Route path="/drinks/:drinkId" element={<Details />} />
-
+              </Suspense>
               <Route element={<AuthGuard/>}>
               <Route path="/create" element={<Create />} />
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />
               <Route path="/logout" element={<Logout />} />
               </Route>
             </Routes>
+            
           </main>
         </div>
       </div>
