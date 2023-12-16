@@ -34,7 +34,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="tm-page-nav-item">
-              <Link to="/latest" className="tm-page-link">
+              <Link to="drinks/latest" className="tm-page-link">
                 <i className="fas fa-glass-martini tm-page-link-icon" />
                 <span>Latest Inventions</span>
               </Link>

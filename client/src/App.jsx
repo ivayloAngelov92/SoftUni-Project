@@ -20,6 +20,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/Guards/AuthGuard';
 import Latest from './components/Catalog/Latest';
 import Details from './components/Details/Details';
+import Contact from './components/ContactUs/Contact';
 // const Details= lazy(()=> import('./components/Details/Details'))
 function App() {
   return (
@@ -32,8 +33,9 @@ function App() {
           <main className="tm-main">
           
             <Routes>
-              <Route path="/" element={<Latest />} />
-              <Route path="/drinks" element={<Catalog />} />
+              <Route path="/drinks/latest" element={<Latest />} />
+              <Route path="/" element={<Catalog />} />
+              <Route path='/contact' element= {<Contact/>}/>
               <Route path="/drinks/iced" element={<Iced />} />
               <Route path="/drinks/hot" element={<Hot />} />
               <Route path="/drinks/juice" element={<Juice />} />

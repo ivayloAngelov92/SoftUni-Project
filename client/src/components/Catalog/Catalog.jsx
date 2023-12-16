@@ -16,13 +16,9 @@ export default function Catalog() {
     <div id="drink" className="tm-page-content">
     <nav className="tm-black-bg tm-drinks-nav">
     <ul>
+        
         <li>
-          <Link to="/" className="tm-tab-link" data-id="all">
-            Our Latest Additions
-          </Link>
-        </li>
-        <li>
-          <Link to="/drinks" className="tm-tab-link active" data-id="all">
+          <Link to="/" className="tm-tab-link active" data-id="all">
             All drinks
           </Link>
         </li>

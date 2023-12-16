@@ -17,30 +17,11 @@ export default function Latest() {
     <nav className="tm-black-bg tm-drinks-nav">
       <ul>
         <li>
-          <Link to="/" className="tm-tab-link active" data-id="all">
+          <Link to="/drinks/latest" className="tm-tab-link active" data-id="all">
             Our Latest Additions
           </Link>
         </li>
-        <li>
-          <Link to="/drinks" className="tm-tab-link" data-id="all">
-            All drinks
-          </Link>
-        </li>
-        <li>
-          <Link to="/drinks/iced" className="tm-tab-link" data-id="cold">
-            Iced
-          </Link>
-        </li>
-        <li>
-          <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
-            Hot
-          </Link>
-        </li>
-        <li>
-          <Link to="/drinks/juice" className="tm-tab-link" data-id="juice">
-            Fruit Juice
-          </Link>
-        </li>
+        
       </ul>
     </nav>
     </div>     
