@@ -19,6 +19,10 @@ export const getLatest = async () => {
     return result
     
 }
+export const getByType = async () => {
+    const result = await request.get(`${baseUrl}?where=type%20LIKE%20%22hot%22`)
+    return result
+}
 
 export const create = async (gameData) => {
     const result = await request.post(baseUrl, gameData);

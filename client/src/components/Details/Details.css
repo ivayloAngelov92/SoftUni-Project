@@ -1,0 +1,14 @@
+section.tm-container{
+    background-color: whitesmoke;    
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+h1.heading{
+    color: whitesmoke;
+}
+div.buttons{
+    display: flex;
+}
+.details-comments ul{
+    list-style-type: none;
+}

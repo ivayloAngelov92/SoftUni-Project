@@ -1,4 +1,3 @@
-import { clearUserData, getUserData } from "./utilities";
 
 const host = 'http://localhost:3030/jsonstore';
 
@@ -7,7 +6,7 @@ async function request(method, url, data) {
         method,
         headers: {}
     }
-    const userData = getUserData()
+    const userData = JSON.parse(localStorage.getItem('userData'));
     if (userData) {
         const token = userData.accessToken
         options.headers['X-Authorization'] = token
@@ -25,7 +24,7 @@ async function request(method, url, data) {
         }
         if (response.ok == false) {
             if (response.status == 403) {
-                clearUserData()
+                localStorage.removeItem('userData');
             }
             let error = result
             throw error

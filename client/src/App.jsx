@@ -1,4 +1,7 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Routes, Route } from 'react-router-dom';
+
+
 import {AuthProvider} from './contexts/authContext';
 import { lazy, Suspense } from 'react';
 
@@ -16,8 +19,8 @@ import Edit from './components/Edit/Edit';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/Guards/AuthGuard';
 import Latest from './components/Catalog/Latest';
-// import Details from './components/Details/Details';
-const Details= lazy(()=> import('./components/Details/Details'))
+import Details from './components/Details/Details';
+// const Details= lazy(()=> import('./components/Details/Details'))
 function App() {
   return (
     <ErrorBoundary>
@@ -36,9 +39,9 @@ function App() {
               <Route path="/drinks/juice" element={<Juice />} />
               <Route path="/login"element={<Login />}/>
               <Route path="/register" element={<Register />} />
-              <Suspense fallback={<h1>Insert spinner component...</h1>}>
+             {/* <Suspense fallback={<h1>Insert spinner component...</h1>}> */}
               <Route path="/drinks/:drinkId" element={<Details />} />
-              </Suspense>
+              {/* </Suspense> */}
               <Route element={<AuthGuard/>}>
               <Route path="/create" element={<Create />} />
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />

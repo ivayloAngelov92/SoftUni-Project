@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import useForm from '../../hooks/useForm';
 import AuthContext from '../../contexts/authContext';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { loginSubmitHandler } = useContext(AuthContext);
@@ -17,6 +18,7 @@ export default function Login() {
         id="email"
         name="email"
         placeholder="example@domain.com"
+        required={true}
         onChange={onChange}
         value={values.email}
       />
@@ -25,6 +27,7 @@ export default function Login() {
         type="password"
         id="password"
         name="password"
+        required={true}
         onChange={onChange}
         value={values.password}
       />
@@ -36,7 +39,7 @@ export default function Login() {
       />
       <p className="field">
         <span>
-          If you don't have profile click <a href="#">here</a>
+          If you don't have profile click <Link to="/register">here</Link>
         </span>
       </p>
     </form>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 export default function useForm(submitHandler, initialValues) {
     const [values, setValues] = useState(initialValues);
 
+
     // useEffect(() => {
     //     setValues(initialValues);
     // }, [initialValues])
@@ -18,6 +19,10 @@ export default function useForm(submitHandler, initialValues) {
         e.preventDefault();
 
         submitHandler(values);
+        setValues({
+            password: '',
+            confirmPassword: '',
+        })
     };
 
     return {

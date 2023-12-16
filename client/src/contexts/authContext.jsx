@@ -12,27 +12,38 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = usePersistedState('auth', {});
 
   const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
-
-    setAuth(result);
-
-    localStorage.setItem('accessToken', result.accessToken);
-
-    navigate('/');
+    try {
+      const result = await authService.login(values.email, values.password);
+      setAuth(result);
+      
+      localStorage.setItem('accessToken', result.accessToken);
+  
+      navigate('/');
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const registerSubmitHandler = async (values) => {
-    const result = await authService.register(
-      values.username,
-      values.email,
-      values.password
-    );
-
-    setAuth(result);
-
-    localStorage.setItem('accessToken', result.accessToken);
-
-    navigate('/');
+    try {
+      if(values.password!= values.confirmPassword) {
+        throw new Error('Passwords do not match');
+      }
+      const result = await authService.register(
+        values.username,
+        values.email,
+        values.password
+      );
+  
+      setAuth(result);
+  
+      localStorage.setItem('accessToken', result.accessToken);
+  
+      navigate('/');
+    } catch (error) {
+      alert(error.message);
+    }
+    
   };
 
   const logoutHandler = () => {

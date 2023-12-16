@@ -1339,38 +1339,24 @@
     	}
     };
     var seedData = {
-    	recipes: {
+    	drinks: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
+    			drinkName: "Coffee",
+                price: "10",
+    			imgUrl: "https://neurosciencenews.com/files/2023/06/coffee-brain-caffeine-neuroscincces.jpg",
+                type: 'hot',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
     			_createdOn: 1613551279012
     		},
     		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Grilled Duck Fillet",
     			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
+    			ingredients: "500 g  Ingredient 1 3 tbsp Ingredient 2 2 cups Ingredient 3",
+    			steps: "Prepare ingredientsMix ingredients Cook until done",
     			_createdOn: 1613551344360
     		},
     		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
