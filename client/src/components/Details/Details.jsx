@@ -53,7 +53,7 @@ export default function Details() {
   });
 
   return (
-    <>
+    <div className='details-container'>
       <h1 className="heading">Custom Drink Details</h1>
 
       <section className="details">
@@ -85,7 +85,7 @@ export default function Details() {
           <Link
             to={`/drinks/${drinkId}/edit`}
             className="tm-page-link"
-            style={{ width: '50%', textAlign: 'center' }}
+            style={{ width: '50%', textAlign: 'center'}}
           >
             Edit
           </Link>
@@ -125,18 +125,18 @@ export default function Details() {
       </div>
       {userId && (
         <article className="create-comment" style={{ textAlign: 'center' }}>
-          <label>Add new comment:</label>
           <form className="form" onSubmit={onSubmit}>
+          <label>Add new comment</label>
             <textarea
               name="comment"
               value={values.comment}
               onChange={onChange}
               placeholder="Comment......"
             ></textarea>
-            <input className="btn submit" type="submit" value="Add Comment" />
+            <button className="tm-page-link" type="submit" style={{ width: '100%', textAlign: 'center' }}>Add Comment</button>
           </form>
         </article>
       )}
-    </>
+    </div>
   );
 }

@@ -114,6 +114,7 @@ h2 { margin-top: 0; }
     align-items: center;   
     font-size: 1.2rem;
     border-radius: 10px;
+    text-align: center;
 }
 
 .tm-page-link:hover,
@@ -203,7 +204,9 @@ h2 { margin-top: 0; }
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    width: fit-content;
+ }
 
 .tm-footer-text {
     padding: 10px 65px 10px 20px;

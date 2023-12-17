@@ -29,7 +29,7 @@ export default function Contact(){
         
           <h2>Find Us on the Map</h2>
           <Link to="https://www.google.com/maps?q=55+Stratton+Drive,+Wigan,+UK" target="_blank">
-          <img id="map" src="../public/img/map.png" alt="Map Image" />
+          <img id="map" src="/img/map.png" alt="Map Image" />
         </Link>
         </div>
    

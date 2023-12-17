@@ -1,7 +1,15 @@
-section.tm-container{
+div.details-container{
+    color: rgb(0, 153, 153)
+}
+
+section.tm-container,.comment{
     background-color: whitesmoke;    
     margin-bottom: 20px;
     border-radius: 20px;
+}
+.comment{
+    width: fit-content;
+    margin-left: 3rem;
 }
 h1.heading{
     color: whitesmoke;
@@ -9,6 +17,7 @@ h1.heading{
 div.buttons{
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 .details-comments ul{
     list-style-type: none;
