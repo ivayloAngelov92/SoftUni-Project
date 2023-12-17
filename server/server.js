@@ -1378,6 +1378,8 @@
     			_createdOn: 1613551388703
     		}
     	},
+        likes: {
+    	},
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1492,8 +1494,6 @@
     			_createdOn: 1614935268135,
     			_id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
     		}
-    	},
-    	likes: {
     	},
     	ideas: {
     		"833e0e57-71dc-42c0-b387-0ce0caf5225e": {

@@ -8,6 +8,7 @@ h1.heading{
 }
 div.buttons{
     display: flex;
+    justify-content: space-between;
 }
 .details-comments ul{
     list-style-type: none;

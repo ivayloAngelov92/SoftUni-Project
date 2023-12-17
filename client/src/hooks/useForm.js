@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function useForm(submitHandler, initialValues) {
     const [values, setValues] = useState(initialValues);
@@ -22,6 +22,7 @@ export default function useForm(submitHandler, initialValues) {
         setValues({
             password: '',
             confirmPassword: '',
+            comment: '',
         })
     };
 
