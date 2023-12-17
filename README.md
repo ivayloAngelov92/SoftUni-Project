@@ -20,7 +20,7 @@ npm run dev
 ```
 ## Features
 - **User Authentication:** Users can create accounts, log in, and log out to personalize their experience.
-- **Recipe Submissions:** Members can submit their favorite recipes, including ingredients, directions, and images.
+- **Drink Submissions:** Members can submit their favorite drink recipes, including ingredients, directions, and images.
 - **Free Content:** Guests could explore all recipies without functionality.
 - **Comments and Interactions:** Engage with the community by leaving comments on recipes, sharing tips, or asking questions.
 - **Personal Profile:** Place where members could check or edit their own recipies.
