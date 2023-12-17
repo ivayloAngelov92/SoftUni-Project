@@ -18,9 +18,13 @@ import Iced from './components/Catalog/Iced';
 import Edit from './components/Edit/Edit';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/Guards/AuthGuard';
+import RegLogGuard from './components/Guards/RegLogGuard';
 import Latest from './components/Catalog/Latest';
 import Details from './components/Details/Details';
 import Contact from './components/ContactUs/Contact';
+import Profile from './components/Profile/Profile';
+
+
 // const Details= lazy(()=> import('./components/Details/Details'))
 function App() {
   return (
@@ -39,16 +43,22 @@ function App() {
               <Route path="/drinks/iced" element={<Iced />} />
               <Route path="/drinks/hot" element={<Hot />} />
               <Route path="/drinks/juice" element={<Juice />} />
+              <Route element={<RegLogGuard/>}>
               <Route path="/login"element={<Login />}/>
               <Route path="/register" element={<Register />} />
+              </Route>
              {/* <Suspense fallback={<h1>Insert spinner component...</h1>}> */}
               <Route path="/drinks/:drinkId" element={<Details />} />
               {/* </Suspense> */}
               <Route element={<AuthGuard/>}>
               <Route path="/create" element={<Create />} />
+              <Route path="/profile" element={<Profile/>} />
+              {/* <Route path="/favorites" element={<Favorites/>} /> */}
+
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />
               <Route path="/logout" element={<Logout />} />
               </Route>
+              <Route path='*' element={<Catalog/>}/>
             </Routes>
             
           </main>

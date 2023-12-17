@@ -20,11 +20,6 @@ export const getLatest = async () => {
     return result
     
 }
-export const getByType = async () => {
-    const result = await request.get(`${baseUrl}?where=type%20LIKE%20%22hot%22`)
-    return result
-}
-
 export const create = async (gameData) => {
     const result = await request.post(baseUrl, gameData);
 
@@ -38,8 +33,16 @@ export const allLikes= async(id)=> {
     const result= await request.get(`${likeUrl}?where=drinkId%3D%22${id}%22&distinct=_ownerId&count`)
 	return result
 }
+export const allLikesProfile= async(id)=> {
+    const result= await request.get(`${baseUrl}?where=drinkId%3D%22${id}%22&distinct=_ownerId&count`)
+	return result
+}
 export const hasLiked = async (drinkId, userId)=>{
     const result= request.get(`${likeUrl}?where=drinkId%3D%22${drinkId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
+    return result
+}
+export const getMyDrinks= async(userId)=>{
+    const result= await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
     return result
 }
 

@@ -60,7 +60,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="tm-page-nav-item">
-              <Link to="/create" className="tm-page-link">
+              <Link to="/profile" className="tm-page-link">
               <i className="fas fa-universal-access tm-page-link-icon" />
                 <span>Welcome {username}</span>
               </Link>

@@ -25,6 +25,7 @@ export default function Create() {
           id="drinkName"
           name="drinkName"
           placeholder="Name your drink"
+          required={true}
         />
         <label htmlFor="price">Price:</label>
         <input
@@ -34,6 +35,7 @@ export default function Create() {
           min={0}
           step="any"
           placeholder="Price"
+          required={true}
         />
         <label htmlFor="imgUrl">Image Url:</label>
         <input
@@ -41,6 +43,7 @@ export default function Create() {
           id="imgUrl"
           name="imgUrl"
           placeholder="Enter image URL"
+          required={true}
         />
         <label htmlFor="type">Type:</label>
         <select id="type" name="type" required={true}>
@@ -54,6 +57,7 @@ export default function Create() {
           id="ingredients"
           name="ingredients"
           rows={4}
+          required={true}
           placeholder="All Ingredient necessary for this recipe."
         />
         <label htmlFor="instructions">Instructions:</label>
@@ -61,6 +65,7 @@ export default function Create() {
           id="instructions"
           name="instructions"
           rows={4}
+          required={true}
           placeholder="Some clarification"
         />
         <label htmlFor="description">Description:</label>
@@ -68,6 +73,7 @@ export default function Create() {
           id="description"
           name="description"
           rows={4}
+          required={true}
           placeholder="Description"
         />
         <input className="tm-page-link" type="submit" value="Create Drink"/>

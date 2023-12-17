@@ -11,7 +11,7 @@ export default function Hot() {
      drinkService.getAll()
      .then(result=> result.filter(drink=>drink.type=== 'hot'))
      .then(result=> setDrinks(result))
-     .catch(err=> console.log(err))
+     .catch(err=> console.error(err))
   },[])
   return ( 
     <>

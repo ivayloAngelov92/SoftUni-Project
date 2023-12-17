@@ -43,7 +43,7 @@ export default function Details() {
     }
   };
   const likeButtonClickHandler = async () => {
-     await drinkService.like({ drinkId: drinkId });
+     await drinkService.like({ drinkId: email });
      setLikes((state)=> state+1)
      setHasLiked((state)=> !state)
   };

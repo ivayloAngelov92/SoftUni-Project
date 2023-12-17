@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as drinkService from '../../services/drinkService'
 
 import { Link} from 'react-router-dom'
-import Drink from './drinkItem/Drink';
+import Drink from '../Catalog/drinkItem/Drink';
+import AuthContext from '../../contexts/authContext';
 export default function Catalog() {
+    const{ email, userId}= useContext(AuthContext)
   const [drinks, setDrinks]= useState([])
+  
 
   useEffect(()=>{
-     drinkService.getAll()
+     drinkService.getMyDrinks(userId)
      .then(result=> setDrinks(result))
-     .catch(err=> console.error(err))
-  },[])
+     .catch(err=> console.log(err))
+  },[userId])
   return ( 
     <>
     <div id="drink" className="tm-page-content">
@@ -18,25 +21,15 @@ export default function Catalog() {
     <ul>
         
         <li>
-          <Link to="/" className="tm-tab-link active" data-id="all">
-            All drinks
+          <Link to="/profile" className="tm-tab-link active" data-id="all">
+            My Drinks
           </Link>
-        </li>
+          </li>
         <li>
-          <Link to="/drinks/iced" className="tm-tab-link" data-id="cold">
-            Iced
+          <Link to="/favorites" className="tm-tab-link" data-id="all">
+            Favorites
           </Link>
-        </li>
-        <li>
-          <Link to="/drinks/hot" className="tm-tab-link" data-id="hot">
-            Hot
-          </Link>
-        </li>
-        <li>
-          <Link to="/drinks/juice" className="tm-tab-link" data-id="juice">
-            Fruit Juice
-          </Link>
-        </li>
+          </li>
       </ul>
     </nav>
     </div>     
