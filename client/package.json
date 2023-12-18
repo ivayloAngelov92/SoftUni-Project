@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "firebase deploy",
-    "release": "npm run build && run deploy"
+    "release": "npm run build && npm run deploy"
   },
   "dependencies": {
     "antd": "^5.12.1",
