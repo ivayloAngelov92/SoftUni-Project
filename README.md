@@ -4,7 +4,10 @@
 This is a simple project for React course at SoftUni to show basic functional skills - October 2023
 
 ## Getting started 
-
+```
+Firebase deployed
+https://soft-uni-wave-cafe.web.app/
+```
 Clone the repository
 ```
 https://github.com/ivayloAngelov92/SoftUni-Project.git
