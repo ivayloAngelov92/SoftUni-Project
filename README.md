@@ -9,7 +9,7 @@ This is a simple project for React course at SoftUni to show basic functional sk
 ```
 https://soft-uni-wave-cafe.web.app/
 ```
-Clone the repository
+Development mode Clone the repository
 ```
 https://github.com/ivayloAngelov92/SoftUni-Project.git
 ```
