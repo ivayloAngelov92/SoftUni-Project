@@ -1322,17 +1322,20 @@
     		"35c62d76-8152-4626-8712-eeb96381bea8": {
     			email: "peter@abv.bg",
     			username: "Peter",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                likes:[]
     		},
     		"847ec027-f659-4086-8032-5173e2f9c93a": {
     			email: "george@abv.bg",
     			username: "George",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                likes:[]
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
     			email: "admin@abv.bg",
     			username: "Admin",
-    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
+    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
+                likes:[]
     		}
     	},
     	sessions: {
@@ -1351,31 +1354,137 @@
                 description:"Best coffee there is.",
     			_createdOn: 1613551279012
     		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b291": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: "500 g  Ingredient 1 3 tbsp Ingredient 2 2 cups Ingredient 3",
-    			steps: "Prepare ingredientsMix ingredients Cook until done",
+    			drinkName: "Hot Americano",
+                price: "2",
+    			imgUrl: "/img/hot-americano.png",
+                type: 'hot',
+    			ingredients: "Coffee",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
     			_createdOn: 1613551344360
     		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b292": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Iced Espresso",
+                price: "2",
+    			imgUrl: "/img/iced-espresso.png",
+                type: 'iced',
+    			ingredients: "Coffee, Ice",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
     			_createdOn: 1613551388703
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b293": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Cappuccino",
+                price: "3",
+    			imgUrl: "/img/hot-cappuccino.png",
+                type: 'hot',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388720
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b295": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Iced Cappuccino",
+                price: "14",
+    			imgUrl: "/img/iced-cappuccino.png",
+                type: 'iced',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388750
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b296": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Iced Americano",
+                price: "10",
+    			imgUrl: "/img/iced-americano.png",
+                type: 'iced',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388799
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b297": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Iced Latte",
+                price: "10",
+    			imgUrl: "/img/iced-latte.png",
+                type: 'iced',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388788
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b299": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Strawberry Smoothie",
+                price: "16",
+    			imgUrl: "/img/smoothie-1.png",
+                type: 'juice',
+    			ingredients: "Strawberries, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388777
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b290": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Coffee",
+                price: "10",
+    			imgUrl: "/img/smoothie-2.png",
+                type: 'juice',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388766
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b281": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Coffee",
+                price: "10",
+    			imgUrl: "/img/smoothie-3.png",
+                type: 'juice',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388755
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b282": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Coffee",
+                price: "20",
+    			imgUrl: "/img/smoothie-4.png",
+                type: 'juice',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388744
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b283": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Coffee",
+                price: "10",
+    			imgUrl: "/img/hot-latte.png",
+                type: 'hot',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388733
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b284": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Coffee",
+                price: "10",
+    			imgUrl: "/img/special-01.png",
+                type: 'hot',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388751
     		}
     	},
         likes: {

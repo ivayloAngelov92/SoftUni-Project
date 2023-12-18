@@ -27,12 +27,12 @@ export default function Header() {
                 <span>Drink Menu</span>
               </Link>
             </li>
-            <li className="tm-page-nav-item">
+            {/* <li className="tm-page-nav-item">
               <Link to="/about" className="tm-page-link">
                 <i className="fas fa-users tm-page-link-icon" />
                 <span>About Us</span>
               </Link>
-            </li>
+            </li> */}
             <li className="tm-page-nav-item">
               <Link to="drinks/latest" className="tm-page-link">
                 <i className="fas fa-glass-martini tm-page-link-icon" />

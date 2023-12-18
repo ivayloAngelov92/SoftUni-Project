@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       const result = await authService.register(
         values.username,
         values.email,
-        values.password
+        values.password,
       );
   
       setAuth(result);
