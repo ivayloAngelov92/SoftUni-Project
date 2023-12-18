@@ -43,8 +43,8 @@ export default function Details() {
     }
   };
   const likeButtonClickHandler = async () => {
-     await drinkService.like({ drinkId: email });
-     setLikes((state)=> state+1)
+     await drinkService.like({ drinkId: drinkId });
+     setLikes((state)=>hasLiked? Number(state)-1: Number(state)+1)
      setHasLiked((state)=> !state)
   };
 
@@ -98,14 +98,14 @@ export default function Details() {
           </button>
         </div>
       )}
-      {!hasLiked && userId && userId != drink._ownerId && (
+      {userId && userId != drink._ownerId && (
         <div className="buttons">
           <button
             className="tm-page-link"
             onClick={likeButtonClickHandler}
             style={{ width: '100%', textAlign: 'center' }}
           >
-            Like
+            {hasLiked? "Don't like it anymore" : "Like It"}
           </button>
         </div>
       )}

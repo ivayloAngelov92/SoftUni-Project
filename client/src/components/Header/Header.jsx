@@ -54,15 +54,15 @@ export default function Header() {
               </Link>
             </li>
             <li className="tm-page-nav-item">
-              <Link to="/logout" className="tm-page-link">
-              <i className="fa fa-sign-out tm-page-link-icon" />
-                <span>Logout</span>
-              </Link>
-            </li>
-            <li className="tm-page-nav-item">
               <Link to="/profile" className="tm-page-link">
               <i className="fas fa-universal-access tm-page-link-icon" />
                 <span>Welcome {username}</span>
+              </Link>
+            </li>
+            <li className="tm-page-nav-item">
+              <Link to="/logout" className="tm-page-link">
+              <i className="fa fa-sign-out tm-page-link-icon" />
+                <span>Logout</span>
               </Link>
             </li>
             </>
