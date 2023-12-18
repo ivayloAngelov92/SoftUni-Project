@@ -4,16 +4,18 @@ import * as drinkService from '../../services/drinkService'
 import { Link} from 'react-router-dom'
 import Drink from '../Catalog/drinkItem/Drink';
 import AuthContext from '../../contexts/authContext';
+import LikeContext from '../../contexts/likeContext';
 export default function Catalog() {
-    const{ username, userId}= useContext(AuthContext)
-  const [drinks, setDrinks]= useState([])
-  
-
+    const{ username}= useContext(AuthContext)
+    const { likedProducts }= useContext(LikeContext)
+     const [drinks, setDrinks]= useState(likedProducts)
   useEffect(()=>{
-     drinkService.getMyDrinks(userId)
-     .then(result=> setDrinks(result))
-     .catch(err=> console.log(err))
-  },[userId])
+      drinkService.getAll()
+      .then(result=> result.filter(drink=>likedProducts.includes(drink._id)))
+      .then(result=> setDrinks(result))
+      .catch(err=> console.error(err))
+  },[likedProducts])
+
   return ( 
     <>
     <div id="drink" className="tm-page-content">
@@ -21,12 +23,12 @@ export default function Catalog() {
     <ul>
         
         <li>
-          <Link to="/profile" className="tm-tab-link active" data-id="all">
+          <Link to="/profile" className="tm-tab-link" data-id="all">
           {`${username}'s`} Creations
           </Link>
           </li>
         <li>
-          <Link to="/favorites" className="tm-tab-link" data-id="all">
+          <Link to="/favorites" className="tm-tab-link active" data-id="all">
           {`${username}'s`} Favorites
           </Link>
           </li>

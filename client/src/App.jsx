@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 import {AuthProvider} from './contexts/authContext';
+import { LikeProvider } from './contexts/likeContext';
 // import { lazy, Suspense } from 'react';
 
 import Header from './components/Header/Header';
@@ -23,6 +24,7 @@ import Latest from './components/Catalog/Latest';
 import Details from './components/Details/Details';
 import Contact from './components/ContactUs/Contact';
 import Profile from './components/Profile/Profile';
+import Favorites from './components/Profile/Favorites';
 
 
 // const Details= lazy(()=> import('./components/Details/Details'))
@@ -30,6 +32,7 @@ function App() {
   return (
     <ErrorBoundary>
     <AuthProvider>
+    <LikeProvider>
     <div className="tm-container">
       <div className="tm-row">
         <Header />
@@ -53,7 +56,7 @@ function App() {
               <Route element={<AuthGuard/>}>
               <Route path="/create" element={<Create />} />
               <Route path="/profile" element={<Profile/>} />
-              {/* <Route path="/favorites" element={<Favorites/>} /> */}
+              <Route path="/favorites" element={<Favorites/>} />
 
               <Route path="/drinks/:drinkId/edit" element={<Edit />} />
               <Route path="/logout" element={<Logout />} />
@@ -66,6 +69,7 @@ function App() {
       </div>
       <Footer></Footer>
     </div>
+    </LikeProvider>
     </AuthProvider>
     </ErrorBoundary>
   );

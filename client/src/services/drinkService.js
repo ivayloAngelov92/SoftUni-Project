@@ -20,8 +20,8 @@ export const getLatest = async () => {
     return result
     
 }
-export const create = async (gameData) => {
-    const result = await request.post(baseUrl, gameData);
+export const create = async (drinkId) => {
+    const result = await request.post(baseUrl, drinkId);
 
     return result;
 };
@@ -29,6 +29,11 @@ export const like = async (drinkId) => {
     const result = await request.post(likeUrl, drinkId);
     return result;
 };
+export const getOneLike = async (drinkId) => {
+    const result = await request.get(`${likeUrl}/${drinkId}`, );
+
+    return result;
+}
 export const allLikes= async(id)=> {
     const result= await request.get(`${likeUrl}?where=drinkId%3D%22${id}%22&distinct=_ownerId&count`)
 	return result
@@ -46,11 +51,12 @@ export const getMyDrinks= async(userId)=>{
     return result
 }
 
-export const edit = async (gameId, gameData) => {
-    const result = await request.put(`${baseUrl}/${gameId}`, gameData);
+export const edit = async (drinkId, drinkData) => {
+    const result = await request.put(`${baseUrl}/${drinkId}`, drinkData);
 
     return result;
 };
 
-export const remove = async (gameId) => request.remove(`${baseUrl}/${gameId}`);
+export const remove = async (drinkId) => request.remove(`${baseUrl}/${drinkId}`);
+export const unlike = async (drinkId) => request.remove(`${likeUrl}/${drinkId}`)
 

@@ -3,20 +3,25 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import * as drinkService from '../../services/drinkService';
 import * as commentService from '../../services/commentService';
 import AuthContext from '../../contexts/authContext';
+import LikeContext from '../../contexts/likeContext';
 import useForm from '../../hooks/useForm';
 import './Details.css';
 // import reducer from './commentReducer';
 
+
+
 export default function Details() {
   const navigate = useNavigate();
+  const { drinkId } = useParams();
   const { email, userId } = useContext(AuthContext);
+  const { addLike, removeLike }= useContext(LikeContext)
+  
   
   const [drink, setDrink] = useState({});
   const [comments, setComments] = useState([]);
   const [like, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
 
-  const { drinkId } = useParams();
   useEffect(() => {
     drinkService.getOne(drinkId).then(setDrink);
     drinkService.allLikes(drinkId).then(setLikes);
@@ -43,9 +48,14 @@ export default function Details() {
     }
   };
   const likeButtonClickHandler = async () => {
-     await drinkService.like({ drinkId: drinkId });
-     setLikes((state)=>hasLiked? Number(state)-1: Number(state)+1)
-     setHasLiked((state)=> !state)
+    try {
+       await drinkService.like({drinkId: drinkId});
+       setLikes((state)=> Number(state)+1)
+       setHasLiked((state)=> !state)
+       addLike(drinkId)
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const { values, onChange, onSubmit } = useForm(addCommentHandler, {
@@ -98,14 +108,14 @@ export default function Details() {
           </button>
         </div>
       )}
-      {userId && userId != drink._ownerId && (
+      { !hasLiked && userId && userId != drink._ownerId && (
         <div className="buttons">
           <button
             className="tm-page-link"
             onClick={likeButtonClickHandler}
             style={{ width: '100%', textAlign: 'center' }}
           >
-            {hasLiked? "Don't like it anymore" : "Like It"}
+            Like
           </button>
         </div>
       )}

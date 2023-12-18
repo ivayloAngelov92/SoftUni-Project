@@ -49,6 +49,7 @@ export const AuthProvider = ({ children }) => {
   const logoutHandler = () => {
     setAuth({});
     localStorage.removeItem('accessToken');
+
   };
 
   const values = {
@@ -58,6 +59,7 @@ export const AuthProvider = ({ children }) => {
     username: auth.username || auth.email,
     email: auth.email,
     userId: auth._id,
+    liked:[],
     isAuthenticated: !!auth.accessToken,
   };
 
