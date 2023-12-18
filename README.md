@@ -5,7 +5,8 @@ This is a simple project for React course at SoftUni to show basic functional sk
 
 ## Getting started 
 ```
-Firebase deployed
+##Firebase deployed
+```
 https://soft-uni-wave-cafe.web.app/
 ```
 Clone the repository
