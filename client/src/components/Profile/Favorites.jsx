@@ -13,7 +13,7 @@ export default function Catalog() {
       drinkService.getAll()
       .then(result=> result.filter(drink=>likedProducts.includes(drink._id)))
       .then(result=> setDrinks(result))
-      .catch(err=> console.error(err))
+      .catch(err=> alert(err))
   },[likedProducts])
 
   return ( 

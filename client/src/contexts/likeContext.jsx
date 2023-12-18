@@ -1,13 +1,14 @@
 import { createContext, useContext, useState } from 'react';
-
+import AuthContext from './authContext';
 // import usePersistedState from '../hooks/usePersistedState';
 
 const LikeContext = createContext();
 
 export const LikeProvider = ({ children }) => {
+  const {userId}= useContext(AuthContext)
   const [likedProducts, setLikedProducts] = useState([]);
 
-  const addLike = (productId) => {
+  const addLike = (productId,) => {
     setLikedProducts((prevLikedProducts) => [...prevLikedProducts, productId]);
     // localStorage.setItem("liked", productId)
   };

@@ -215,7 +215,11 @@ h2 { margin-top: 0; }
 
 .tm-footer-link { color: white; }
 .tm-tab-content { animation: fadeEffect 1s; }
-.tm-page-content { animation: fadeEffect 1s; }
+.tm-page-content { 
+    animation: fadeEffect 1s;
+    position: sticky;
+    top: 0; 
+    z-index: 100; }
 
 .tm-text-primary { color: #3CC; }
 .tm-mb-20 { margin-bottom: 20px; }
