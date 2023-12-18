@@ -12,14 +12,13 @@ export default function Catalog() {
   useEffect(()=>{
      drinkService.getMyDrinks(userId)
      .then(result=> setDrinks(result))
-     .catch(err=> console.log(err))
+     .catch(err=> alert(err))
   },[userId])
   return ( 
     <>
     <div id="drink" className="tm-page-content">
     <nav className="tm-black-bg tm-drinks-nav">
     <ul>
-        
         <li>
           <Link to="/profile" className="tm-tab-link active" data-id="all">
           {`${username}'s`} Creations
@@ -32,6 +31,7 @@ export default function Catalog() {
           </li>
       </ul>
     </nav>
+
     </div>     
       <div className="tm-tab-content">
             <div className="tm-list">

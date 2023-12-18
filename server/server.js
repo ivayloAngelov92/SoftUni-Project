@@ -1323,19 +1323,19 @@
     			email: "peter@abv.bg",
     			username: "Peter",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
-                
+                liked:[]
     		},
     		"847ec027-f659-4086-8032-5173e2f9c93a": {
     			email: "george@abv.bg",
     			username: "George",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
-                
+                liked:[]
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
     			email: "admin@abv.bg",
     			username: "Admin",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
-              
+                liked:[]
     		}
     	},
     	sessions: {
@@ -1433,7 +1433,7 @@
     		},
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b290": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			drinkName: "Coffee",
+    			drinkName: "Pomegranate",
                 price: "10",
     			imgUrl: "/img/smoothie-2.png",
                 type: 'juice',
@@ -1444,7 +1444,7 @@
     		},
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b281": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			drinkName: "Coffee",
+    			drinkName: "Mango",
                 price: "10",
     			imgUrl: "/img/smoothie-3.png",
                 type: 'juice',
@@ -1455,7 +1455,7 @@
     		},
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b282": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			drinkName: "Coffee",
+    			drinkName: "Kiwi",
                 price: "20",
     			imgUrl: "/img/smoothie-4.png",
                 type: 'juice',
@@ -1466,7 +1466,7 @@
     		},
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b283": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			drinkName: "Coffee",
+    			drinkName: "Hot Latte",
                 price: "10",
     			imgUrl: "/img/hot-latte.png",
                 type: 'hot',
@@ -1477,9 +1477,20 @@
     		},
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b284": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			drinkName: "Coffee",
+    			drinkName: "Special",
                 price: "10",
     			imgUrl: "/img/special-01.jpg",
+                type: 'hot',
+    			ingredients: "Coffee, milk",
+    			instructions: "Grind coffee and put in the machine",
+                description:"Best coffee there is.",
+    			_createdOn: 1613551388751
+    		},
+    		"3987279d-0ad4-4afb-8ca9-5b256ae3b274": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			drinkName: "Hot Espresso",
+                price: "10",
+    			imgUrl: "/img/hot-espresso.png",
                 type: 'hot',
     			ingredients: "Coffee, milk",
     			instructions: "Grind coffee and put in the machine",

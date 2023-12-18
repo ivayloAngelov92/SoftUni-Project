@@ -1,16 +1,29 @@
 import { useEffect, useState } from 'react';
 import * as drinkService from '../../services/drinkService'
 
+import Search from '../Search/Search';
 import { Link} from 'react-router-dom'
 import Drink from './drinkItem/Drink';
 export default function Catalog() {
   const [drinks, setDrinks]= useState([])
+  const [filteredDrinks, setFilteredDrinks] = useState([]);
+
 
   useEffect(()=>{
      drinkService.getAll()
-     .then(result=> setDrinks(result))
+     .then(result=>{
+      setDrinks(result)
+      setFilteredDrinks(result)
+     } )
+
      .catch(err=> console.error(err))
   },[])
+  const handleSearch = (searchTerm) => {
+    const filtered = drinks.filter((drink) =>
+      drink.drinkName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredDrinks(filtered);
+  };
   return ( 
     <>
     <div id="drink" className="tm-page-content">
@@ -39,10 +52,11 @@ export default function Catalog() {
         </li>
       </ul>
     </nav>
+    <Search onSearch={handleSearch}/>
     </div>     
       <div className="tm-tab-content">
             <div className="tm-list">
-              {drinks.map(drink=>(
+              {(filteredDrinks.length > 0 ? filteredDrinks : drinks).map(drink=>(
                 <Drink key={drink._id} {...drink} />
               ))}
               {drinks.length===0 && <h3 className="no-drinks">No Drinks</h3>}

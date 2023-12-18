@@ -25,6 +25,7 @@ import Details from './components/Details/Details';
 import Contact from './components/ContactUs/Contact';
 import Profile from './components/Profile/Profile';
 import Favorites from './components/Profile/Favorites';
+import Search from './components/Search/Search';
 
 
 // const Details= lazy(()=> import('./components/Details/Details'))
@@ -42,6 +43,7 @@ function App() {
             <Routes>
               <Route path="/drinks/latest" element={<Latest />} />
               <Route path="/" element={<Catalog />} />
+              <Route path='/search' element={<Search/>}></Route>
               <Route path='/contact' element= {<Contact/>}/>
               <Route path="/drinks/iced" element={<Iced />} />
               <Route path="/drinks/hot" element={<Hot />} />
