@@ -34,12 +34,17 @@ export const getOneLike = async (drinkId) => {
 
     return result;
 }
+export const getAllLike = async () => {
+    const result = await request.get(likeUrl );
+
+    return result;
+}
 export const allLikes= async(id)=> {
     const result= await request.get(`${likeUrl}?where=drinkId%3D%22${id}%22&distinct=_ownerId&count`)
 	return result
 }
 export const allLikesProfile= async(id)=> {
-    const result= await request.get(`${baseUrl}?where=drinkId%3D%22${id}%22&distinct=_ownerId&count`)
+    const result= await request.get(`${likeUrl}?where=userId%3D%22${id}%22&distinct=_ownerId`)
 	return result
 }
 export const hasLiked = async (drinkId, userId)=>{
@@ -58,5 +63,5 @@ export const edit = async (drinkId, drinkData) => {
 };
 
 export const remove = async (drinkId) => request.remove(`${baseUrl}/${drinkId}`);
-export const unlike = async (drinkId) => request.remove(`${likeUrl}/${drinkId}`)
+export const unlike = async (likeId) => request.remove(`${likeUrl}/${likeId}`)
 

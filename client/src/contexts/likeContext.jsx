@@ -10,14 +10,14 @@ export const LikeProvider = ({ children }) => {
 
   const addLike = (productId,) => {
     setLikedProducts((prevLikedProducts) => [...prevLikedProducts, productId]);
-    // localStorage.setItem("liked", productId)
+  
   };
 
   const removeLike = (productId) => {
     setLikedProducts((prevLikedProducts) =>
       prevLikedProducts.filter((id) => id !== productId)
       );
-      // localStorage.removeItem('liked', productId)
+
   };
 
   return (
