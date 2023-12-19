@@ -25,7 +25,7 @@ import Contact from './components/ContactUs/Contact';
 import Profile from './components/Profile/Profile';
 import Favorites from './components/Profile/Favorites';
 import Search from './components/Search/Search';
-// import Spinner from './components/Spinner/Spinner';
+import Spinner from './components/Spinner/Spinner';
 
 // const Details= lazy(()=> import('./components/Details/Details'))
 function App() {
@@ -50,9 +50,14 @@ function App() {
                       <Route path="/login" element={<Login />} />
                       <Route path="/register" element={<Register />} />
                     </Route>
-                    {/* <Suspense fallback={<Spinner />}> */}
-                      <Route path="/drinks/:drinkId" element={<Details />} />
-                    {/* </Suspense> */}
+                    <Route
+                      path="/drinks/:drinkId"
+                      element={
+                        <Suspense fallback={<Spinner />}>
+                          <Details />
+                        </Suspense>
+                      }
+                    />
                     <Route element={<AuthGuard />}>
                       <Route path="/create" element={<Create />} />
                       <Route path="/profile" element={<Profile />} />

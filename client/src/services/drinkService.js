@@ -20,8 +20,8 @@ export const getLatest = async () => {
     return result
     
 }
-export const create = async (drinkId) => {
-    const result = await request.post(baseUrl, drinkId);
+export const create = async (drinkData) => {
+    const result = await request.post(baseUrl, drinkData);
 
     return result;
 };
